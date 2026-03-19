@@ -5,6 +5,7 @@ namespace SpaceDefender.Core
 {
     public class Enemy
     {
+        //Test comment for commit
         public int Health { get; private set; } = 100;
         public int Reward { get; private set; } = 10;
         public bool IsAlive => Health > 0;
