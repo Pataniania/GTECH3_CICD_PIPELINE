@@ -5,19 +5,19 @@ namespace SpaceDefender.Core
     public class ScoreCalculator
     {
         public int Multiplier { get; set; } = 1; 
-        private Player _player;
-        public void Calculate()
+
+        public int Calculate(int kills, int time)
         {
-            
+            return Multiplier * kills * time;
         }
 
-        public void ApplyCombo()
+        public void ApplyCombo(int comboCount)
         {
-            Multiplier *= _player.NumberOfKills;
+            Multiplier *= comboCount;
         }
         public void ResetMultipler()
         {
-
+            Multiplier = 1;
         }
     }
 }

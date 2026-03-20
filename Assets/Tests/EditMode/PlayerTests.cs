@@ -47,14 +47,14 @@ public class PlayerTests
     [Test]
     public void Heal_WhenHealthBelow100_IncreasesHealth()
     {
-        int playerHealthBeforeDamage = _player.Health;
-
         _player.TakeDamage(15);
+        int healthAfterDamage = _player.Health;
 
-        _player.Heal(20);
+        _player.Heal(10);
 
-        Assert.Greater(playerHealthBeforeDamage, _player.Health);
-
+        Assert.Greater(_player.Health,healthAfterDamage);
+        Assert.AreEqual(95, _player.Health);
+        Assert.LessOrEqual(_player.Health, 100);
     }
 
     [Test]

@@ -9,7 +9,7 @@ namespace SpaceDefender.Core
         public int Score { get; private set; } = 0;
         public bool IsAlive => Health > 0 && Lives > 0;
 
-        public int NumberOfKills { get; set; } = 1;
+        public int NumberOfKills { get; set; } = 2;
 
         public void TakeDamage(int amount)
         {

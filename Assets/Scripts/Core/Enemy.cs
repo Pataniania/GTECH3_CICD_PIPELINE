@@ -7,6 +7,8 @@ namespace SpaceDefender.Core
     {
         //Test comment for commit
         public int Health { get; private set; } = 100;
+        int pointValue = 2;
+
         public int Reward { get; private set; } = 10;
         public bool IsAlive => Health > 0;
 

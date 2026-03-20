@@ -17,8 +17,9 @@ public class ScoreCalculatorTest
     [Test]
     public void Calculate_WithZeroKills_ReturnsZero()
     {
-        _scoreCalculator.Calculate();
+        _scoreCalculator.Calculate(0,2);
     
+        Assert.AreEqual(0, _scoreCalculator.Calculate(0,2));
         // Assert.Multiple(() =>
         // {
         //     Assert.That(_player.NumberOfKills, Is.EqualTo(0));
@@ -30,9 +31,7 @@ public class ScoreCalculatorTest
     public void ApplyCombo_With3Kills_IncreasesMultiplier()
     {
 
-        _player.NumberOfKills = 3;
-
-        _scoreCalculator.ApplyCombo();
+        _scoreCalculator.ApplyCombo(3);
 
         Assert.AreEqual(3, _scoreCalculator.Multiplier);
     }
@@ -40,10 +39,7 @@ public class ScoreCalculatorTest
     [Test]
     public void ResetMultiplier_AfterCombo_SetsMultiplierToOne()
     {
-
-        _player.NumberOfKills = 4;
-
-        _scoreCalculator.ApplyCombo();
+        _scoreCalculator.ApplyCombo(3);
 
         _scoreCalculator.ResetMultipler();
 
@@ -52,7 +48,9 @@ public class ScoreCalculatorTest
 
     [Test]
     public void Calculate_AfterComboAndReset_UsesBaseMultiplier()
-    { }
+    {
+        
+    }
 
 
 
